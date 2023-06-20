@@ -1,0 +1,150 @@
+//font-family: 'Ubuntu', sans-serif;
+
+$lightGray: #D4D2D5;
+$darkLava: #463F3A;
+$sizzlingRed: #EF5D60;
+$white: #fff;
+$gridNumber: 0;
+
+body {
+    background-color: $lightGray;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: $darkLava;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+#grid-container {
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    $gridNumber: 30;
+    grid-template-columns: repeat($gridNumber, 1fr);
+    grid-template-rows: repeat($gridNumber, 1fr);
+
+    .grid-cell {
+        border: 1px $darkLava solid;
+        background-color: $white;
+        padding: 7px;
+    }
+}
+
+form {
+
+    margin: 140px 0px 0px 200px;
+    //top right bottom left
+
+    #label {
+        font-weight: 700;
+        font-size: 22px;
+        color: $darkLava;
+        letter-spacing: -0.4px;
+        margin: 0px 0px 0px 0px;
+        text-align: justify;
+        border: 2px $darkLava solid;
+    }
+
+    input {
+        margin: 0px 0px 30px 0px;
+    }
+
+    .buttons {
+        padding: 7px 14px;
+        border-radius: 4px;
+        border: 2px $sizzlingRed solid;
+        margin: 10px 0px 5px 0px;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+        color: $white;
+        background-color: $sizzlingRed;
+        letter-spacing: 0.1px;
+        height: fit-content;
+    }
+
+    .buttons:hover {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1213px) {
+
+    #grid-container {
+        $gridNumber: 30;
+        grid-template-columns: repeat($gridNumber, 1fr);
+        grid-template-rows: repeat($gridNumber, 1fr);
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    form {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 550px;
+
+        #label {
+            font-size: 18px;
+        }
+
+        .buttons {
+            font-size: 17px;
+        }
+    }
+}
+
+@media screen and (max-width: 935px) {
+
+    #grid-container {
+        $gridNumber: 27;
+        grid-template-columns: repeat($gridNumber, 1fr);
+        grid-template-rows: repeat($gridNumber, 1fr);
+        top: 45%;
+    }
+
+    form{
+        top: 480px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #grid-container {
+        $gridNumber: 24;
+        grid-template-columns: repeat($gridNumber, 1fr);
+        grid-template-rows: repeat($gridNumber, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #grid-container {
+        $gridNumber: 14;
+        grid-template-columns: repeat($gridNumber, 1fr);
+        grid-template-rows: repeat($gridNumber, 1fr);
+        top: 30%;
+    }
+
+    form{
+        top: 300px;
+    }
+}
